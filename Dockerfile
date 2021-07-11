@@ -6,7 +6,7 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 
 WORKDIR /opt/app
 
-ARG JAR_FILE=target/spring-boot-web.jar
+ARG JAR_FILE=target/teste-dasa.jar
 
 # cp spring-boot-web.jar /opt/app/app.jar
 COPY ${JAR_FILE} app.jar
@@ -21,7 +21,7 @@ ENTRYPOINT ["java","-jar","app.jar"]
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=target/spring-boot-web.jar
+ARG JAR_FILE=target/teste-dasa.jar
 
 # cd /opt/app
 WORKDIR /opt/app

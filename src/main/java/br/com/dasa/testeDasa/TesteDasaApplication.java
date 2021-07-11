@@ -1,9 +1,6 @@
 package br.com.dasa.testeDasa;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import br.com.dasa.testeDasa.dto.HealthTesteDTO;
 import br.com.dasa.testeDasa.model.Exame;
 import br.com.dasa.testeDasa.model.Laboratorio;
 import br.com.dasa.testeDasa.model.Unidade;
@@ -21,6 +23,8 @@ import br.com.dasa.testeDasa.repository.UnidadeRepository;
 
 @SpringBootApplication
 @EnableJpaRepositories
+@RestController
+@RequestMapping("/")
 public class TesteDasaApplication {
 	
 	@Autowired
@@ -77,4 +81,11 @@ public class TesteDasaApplication {
         	unidadeRepository.save(unidadeTres);
         };
 	}
+	
+	 @GetMapping()
+	    public HealthTesteDTO index() {
+	        HealthTesteDTO healthTest = new HealthTesteDTO("Teste Dasa",
+	        		"Bem-vindo ao teste da Dasa, desenvolvido por Alex Sandro de Almeida Souza", new Date());
+	        return healthTest;
+	    }
 }

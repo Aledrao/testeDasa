@@ -9,6 +9,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 - [JDK 10: Necessário para executar o projeto Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html)
 - [Maven 3.8.1: Necessário para realizar o build do projeto Java](https://downloads.apache.org/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.zip)
 - [Eclipse: Para desenvolvimento do projeto](http://www.eclipse.org/downloads/packages/release/2021-06/r/eclipse-ide-enterprise-java-and-web-developers)
+- [Docker: Para servir de container da aplicação](https://download.docker.com/win/beta/InstallDocker.msi)
 
 ## Desenvolvimento
 
@@ -63,6 +64,15 @@ Para rodar os testes, utilize o comando abaixo:
 2.Dentro do diretório target, haverão dois arquivos JAR.
 3.Para executar o JAR siga o comando abaixo.
 java -jar target/testeDasa-0.0.1-SNAPSHOT.jar
+```
+
+## Executar com Docker
+Para executar a aplicação através do Docker, rode os comandos abaixo:
+```shell
+cd "diretorio do projeto"
+pwd /home/alexSouza/projects/testeDasa
+ls -lsah
+sudo docker build -t spring-boot:1.0 .
 ```
 
 ## Licença

@@ -75,6 +75,9 @@ ls -lsah
 sudo docker build -t spring-boot:1.0 .
 ```
 
+## Acessar documentação dos endpoints
+Com o projeto em execução, acesse a URL http://localhost:8080/swagger-ui.html
+
 ## Licença
 
 Não se aplica.
